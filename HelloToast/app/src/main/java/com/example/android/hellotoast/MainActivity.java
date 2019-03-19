@@ -16,9 +16,11 @@
 
 package com.example.android.hellotoast;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -64,7 +66,19 @@ public class MainActivity extends AppCompatActivity {
     */
     public void countUp(View view) {
         mCount++;
+        Button thisbutton = (Button) view;
         if (mShowCount != null)
+            if (mCount % 2 == 0){
+                thisbutton.setBackgroundColor(0xff00ff00);
+            }
+            else{
+                thisbutton.setBackgroundColor(0xffffff00);
+            }
             mShowCount.setText(Integer.toString(mCount));
+    }
+
+    public void setzero(View view) {
+        mCount= 0;
+        mShowCount.setText(Integer.toString(mCount));
     }
 }
